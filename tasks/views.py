@@ -10,14 +10,6 @@ from .serializer import TaskSerializer
 
 # Create your views here.
 
-@api_view(['GET'])
-def hello_world(request):
-    return HttpResponse("Hello world from function view")
-
-class HelloWorld(View):
-    def get(self, request):
-        return HttpResponse("Hello world from class view ")
-
 class Tasks(generics.ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
